@@ -1,0 +1,8 @@
+server
+{
+    listen 80 default;
+    server_name localhost;
+    index index.html index.htm index.php;
+    root /tmp/1233;
+    deny all;
+}

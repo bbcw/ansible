@@ -1,0 +1,6 @@
+- name: copy conf file
+  copy: src={{ item.src }} dest={{ nginx_basedir }}/{{ item.dest }} backup=yes owner=root group=root mode=0644
+  with_items:
+    - { src: nginx.conf, dest: conf/nginx.conf }
+    - { src: vhosts, dest: conf/ }
+  notify: restart nginx
